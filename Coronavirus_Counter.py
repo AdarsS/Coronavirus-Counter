@@ -5,7 +5,7 @@ from urllib.request import Request
 
 url = Request("https://www.worldometers.info/coronavirus/#countries", headers={'User-Agent': 'Mozilla/5.0'})
 html = urllib.request.urlopen(url).read()
-soup = BeautifulSoup(html, 'lxml')
+soup = BeautifulSoup(html,  "html.parser")
 count_list = soup.find_all(class_='maincounter-number')
 count_list_items = []
 for i in count_list:
